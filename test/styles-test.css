@@ -1,0 +1,405 @@
+/* =========================
+  Core variables
+========================= */
+:root {
+  /* Brand colors */
+  --primary: #040449;
+  --secondary-red: #f9193a;
+  --secondary-blue: #0badd8;
+  --tertiary: #ffd42a;
+
+  /* Text */
+  --text: #040449;
+  --secondary-text: #212126;
+
+  /* Background system */
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --border: #e6e8ef;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+
+  /* Soft highlight states (nonessential) */
+  --soft-red: #f4d7d7;
+  --soft-blue: #d7f7ff;
+  --soft-yellow: #ffebd9;
+
+  /* Typography */
+  --font: 'Roboto', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --radius: 10px;
+  --container: 800px;
+
+  /* Interaction */
+  --focus: rgba(4, 4, 73, 0.25);
+}
+
+
+/* =========================
+  Base
+========================= */
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+
+/* =========================
+  Layout (form wrapper)
+========================= */
+.oa-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.oa-container {
+  width: 100%;
+  max-width: var(--container);
+}
+
+.oa-card {
+  background: var(--card);
+  border-radius: calc(var(--radius) * 1.6);
+  padding: 56px;
+  box-shadow: 0 12px 32px var(--card-shadow);
+}
+
+.oa-header-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================
+  Typography
+========================= */
+.at .at-form .at-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0px;
+  letter-spacing: -0.3px;
+  padding: 0px 24px 12px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 1.5rem 0 0.5rem;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 1.5rem 0 0.5rem;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 1.5rem 0 0.5rem;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 1.5rem 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondary-text);
+  letter-spacing: -0.3px;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 1.5rem 0 0.5rem;
+}
+
+pre {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background: var(--soft-blue);
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+address {
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--secondary-text);
+}
+
+
+/* =========================
+  NGP Form Code
+========================= */
+.at .at-form {
+  font-family: var(--font);
+  color: var(--text);
+  width: 100%;
+  max-width: 760px;
+  margin: 40px 16px 24px;
+}
+
+/* Field spacing */
+.at .at-form .at-field,
+.at .at-form .form-group {
+  margin-bottom: 16px;
+}
+
+/* Labels */
+.at .at-form label,
+.at .at-form label.at-text {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+
+/* Inputs */
+.at .at-form input[type="text"],
+.at .at-form input[type="email"],
+.at .at-form input[type="tel"],
+.at .at-form select,
+.at .at-form textarea {
+  height: auto;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  font-family: var(--font);
+}
+
+/* Focus state */
+.at .at-form input:focus,
+.at .at-form select:focus,
+.at .at-form textarea:focus {
+  outline: none;
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+
+/* =========================
+  Primary Button (Submit)
+========================= */
+.at .at-form .btn-at-primary,
+.at .at-form button.btn-at-primary {
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  padding: 14px 16px;
+  border-radius: calc(var(--radius) * 1.2);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: auto;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+}
+
+.at .at-form .btn-at-primary:hover {
+  background-color: var(--secondary-blue);
+}
+
+.at .at-form .btn-at-primary:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================
+  Donation Buttons
+========================= */
+.at .at-form form .label-amount > a {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.at .at-form form .label-amount:hover > a {
+  border-color: var(--secondary-blue);
+}
+
+.at .at-form form .label-amount input[type="radio"]:checked + a {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+
+/* =========================
+  Errors
+========================= */
+.at .at-form .error small,
+.at .at-form label.error {
+  color: var(--secondary-red) !important;
+}
+
+.at .error small.error {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================
+  Header image
+========================= */
+.at .at-form .at-title .at-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+
+/* =========================
+  Mobile
+========================= */
+@media (max-width: 480px) {
+  .oa-card {
+    padding: 24px;
+  }
+
+  .at-form-submit .at-submit {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .at-form-submit {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/* =========================
+  Regular check boxes
+========================= */
+.at .at-check input[type=checkbox] + span {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.at .at-check input[type="checkbox"]:checked + span::before {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.at .at-check input[type="checkbox"]:hover + span::before {
+  border-color: var(--primary);
+}
+
+.at .at-check input[type="checkbox"]:active + span::before {
+  background-color: var(--primary);
+}
+
+.at .at-check input[type="checkbox"]:focus + span::before {
+  box-shadow: 0 0 0 3px var(--focus);
+  border-color: var(--primary);
+}
+
+.at input[type="checkbox"]:checked + span::after {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+
+/* =========================
+  Fast Action check boxes
+========================= */
+.at input[type=checkbox]:checked + span::before {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.at input[type="checkbox"]:active + span::before {
+  background-color: var(--primary) !important;
+}
+
+.at input[type="checkbox"]:hover + span::before {
+  border-color: var(--primary) !important;
+}
+
+.at input[type="checkbox"]:focus + span::before {
+  box-shadow: 0 0 0 3px var(--focus) !important;
+  border-color: var(--primary) !important;
+}
+
+
+/* =========================
+  Multi-select dropdown
+========================= */
+.at .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  font-weight: 400;
+}
+
+.at .radios label {
+  font-weight: 400;
+}
+
+
+/* =========================
+  Disclaimer footer
+========================= */
+.at-paid-for-by {
+  font-size: 14px;
+}
+
+.container.form-footer {
+  text-align: center;
+}
+
+.container.form-footer .text-center {
+  margin: 8px;
+}
+
+
+/* =========================
+  SMS disclaimer
+========================= */
+.at .SmsLegalDisclaimer p {
+  font-size: 14px;
+  line-height: 1.25;
+  margin-top: 0.75rem;
+}

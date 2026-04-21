@@ -1,0 +1,105 @@
+NGP VAN/EveryAction ActionTag Form Styling Examples
+
+
+ 
+/*
+ * ActionTag CSS template
+ */
+/* Background Image of Page */
+body {
+    background-image: url(https://nvlupin.blob.core.windows.net/images/van/EADEM/EADEM/1/52490/images/Penguins.jpg);
+    background-size: cover;
+}
+/* Header Image */
+.at .at-form .at-title .at-banner {
+    width: 50%;
+    margin: auto;
+}
+/* Form Title */
+.at .at-form .at-title {
+    color: blue;
+}
+/* Active Step */
+.at .at-form .at-step.active.valid > *::before {
+    background-color: red;
+}
+/* Completed Step */
+.at .at-form .at-step.valid > *::before {
+    background-color: blue;
+}
+/* Incomplete Step */
+.at .at-form .at-step > *::before {
+    background-color: orange;
+}
+/* Active Step Highlight */
+.at .at-form .at-step.active {
+    border-bottom-color: green;
+}
+/* Step Text */
+.at .at-form span.step-title {
+    font-size: 10px;
+}
+/* Inactive Contribution Buttons */
+.at .at-form form .label-amount > a {
+    background-color: orange;
+    border-color: blue;
+}
+/* Contribution Button Hover */
+.at .at-form form .label-amount:hover > a {
+    background-color: yellow;
+    border-color: blue;
+}
+/* Active Contribution Button */
+.at .at-form form .label-amount input[type="radio"]:checked + a {
+    background-color: red;
+    border-color: black;
+}
+/* Submit & Next Buttons */
+.at .at-form .btn-at-primary {
+    background-color: purple;
+}
+/* Submit & Next Buttons Hover */
+.at .at-form .btn-at-primary:hover {
+    background-color: violet;
+}
+/* Previous Step Button */
+.at .at-form a.prevStep.btn-at.btn-at-link {
+    padding-right: 10px;
+}
+/* Input Field Labels */
+.at .at-form label.at-text {
+    color: blue;
+}
+/* Form Wrapper */
+/* To Move Entire Form Position on Page CAUTION Be Careful of Mobile */
+.at .at-form .content.ngp-content {}
+/* Recurring Contribution Label */
+.at .at-form label.at-check.IsRecurring {
+    padding-top: 20px;
+}
+/* Tribute & Gift Membership Label */
+.at .at-form label.at-check.EnableTributeGift {
+    padding-top: 20px;
+}
+/* Form Error On Field */
+.at .at-form .error small.error {
+    color: blue;
+}
+.at .at-form label.error {
+    color: blue;
+}
+/* Swap Form Positions on Multistep Form */
+.at-form section.at-inner header.at-markup.HeaderHtml {
+    float: right;
+    border-left: 1px solid #c4cfdd;
+    margin-left: -1px;
+}
+.at-form section.at-inner form.clearfix {
+    float: left;
+    border-right: 1px solid #c4cfdd;
+}
+
+/* Other Amount Input Placeholder Styling */
+.at form .label-amount input:required::placeholder {
+    color: green;
+}
