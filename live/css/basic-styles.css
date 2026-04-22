@@ -346,7 +346,7 @@ address {
 
 
 /* =========================
-  Fast Action check boxes
+  Fast Action elements
 ========================= */
 .at input[type=checkbox]:checked + span::before {
   background-color: var(--primary) !important;
@@ -364,6 +364,10 @@ address {
 .at input[type="checkbox"]:focus + span::before {
   box-shadow: 0 0 0 3px var(--focus) !important;
   border-color: var(--primary) !important;
+}
+
+.at .at-form label.PersonalUrl {
+  display: none !important;
 }
 
 
