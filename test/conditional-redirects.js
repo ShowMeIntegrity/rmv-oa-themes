@@ -7,11 +7,14 @@ nvtag_callbacks.preSegue.push(function submitSegue(args) {
     console.log("Volunteer:", interestVol);
     console.log("Active Test:", activeTest);
 
-    if (activeTest && !interestVol) {
+    var isInterestVol = interestVol === "true";
+    var isActiveTest = activeTest === "true";
+
+    if (isActiveTest && !isInterestVol) {
         window.location = "https://respectmovoters.org/checkin";
-    } else if (interestVol && !activeTest) {
+    } else if (isInterestVol && !isActiveTest) {
         window.location = "https://respectmovoters.org/reminders";
-    } else if (activeTest && interestVol) {
+    } else if (isActiveTest && isInterestVol) {
         window.location = "https://respectmovoters.org/dashboard";
     } else {
         window.location = "https://respectmovoters.org";
