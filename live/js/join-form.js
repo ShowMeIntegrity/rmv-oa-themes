@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     /* =========================
       Find volunteer & not a vol
       checkboxes
