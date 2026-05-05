@@ -1,13 +1,14 @@
 (function () {
-    console.log("Checkbox disabler initalizing...")
-    console.log("Checkboxes:");
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-        console.log("\t"+cb.name);
-    });
+    function getFieldset() {
+        return document.querySelector('#NVSignupForm2574972-AdditionalInformation');
+    }
 
-    const FIELDSET_SELECTOR = '#NVSignupForm2574972-AdditionalInformation';
+    let initialized = false;
 
-    function initCheckboxLogic(fieldset) {
+    function init(fieldset){
+        if (initialized) return;
+        initialized = true;
+
         /* =================================================
           Find volunteer & not a volunteer checkboxes
         ================================================= */
@@ -22,91 +23,111 @@
         );
 
         if (!volCheckbox || !notVolCheckbox) {
-            console.log("Checkboxes not found yet);");
+            console.warn("Checkboxes not found yet);");
             return;
         }
-
 
         /* =================================================
           Find label attached to each checkbox
         ================================================= */
         const volLabel = volCheckbox.closest("label");
-        const volContainer = volLabel.querySelector(".at-checkbox-title-container");
-
         const notVolLabel = notVolCheckbox.closest("label");
-        const notVolContainer = notVolLabel.querySelector(".at-checkbox-title-container");
 
 
         /* =================================================
           Create helper text for disabled checkboxes
         ================================================= */
-        const volHelper = document.createElement("div");
-        volHelper.className = "checkbox-helper-text";
-        volHelper.textContent = ' Unavailable when "I\'m not ready to volunteer right now" is selected.'
+        function addHelper(label, message) {
+            const container = label.querySelector(".at-checkbox-title-container");
+            if (!container) {
+                console.warn("Checkbox container not found.")
+                return;
+            }
 
-        const notVolHelper = document.createElement("div");
-        notVolHelper.className = "checkbox-helper-text";
-        notVolHelper.textContent = 'Unavailable when "I want to volunteer" is selected.'
+            const msg = document.createElement("div");
+            msg.className = "checkbox-helper-text";
+            msg.textContent = message;
 
+            container.insertAdjacentElement("afterend", msg);
+        }
+
+
+        /* =================================================
+          Clear helper text for disabled checkboxes
+        ================================================= */
+        function clearHelpers() {
+            fieldset.querySelectorAll(".checkbox-helper-text").forEach(el => el.remove());
+        }
 
 
         /* =================================================
           Uncheck and disable opposite checkbox if checked
         ================================================= */
-        function updateCheckboxLogic(){
+        function update(){
             // Remove all helper text
-            fieldset.querySelectorAll(".checkbox-helper-text").forEach(el => el.remove());
+            clearHelpers();
             
-            // I want to volunteer - Checked
+            // VOL checked --> NOT VOL disabled
             if (volCheckbox.checked) {
                 notVolCheckbox.checked = false;
                 notVolCheckbox.disabled = true;
                 
-                if (notVolContainer) {
-                    notVolContainer.insertAdjacentElement("afterend", notVolHelper);
-                }
-
+                addHelper(
+                    notVolLabel,
+                    'Unavailable when "I\'m not ready to volunteer right now" is selected.'
+                );
             } else {
                 notVolCheckbox.disabled = false;
             }
 
-            // I'm not ready to volunteer right now - Checked
+            // NOT VOL checked --> VOL disabled
             if (notVolCheckbox.checked) {
                 volCheckbox.checked = false;
                 volCheckbox.disabled = true;
                 
-                if (volContainer) {
-                    volContainer.insertAdjacentElement("afterend", volHelper);
-                }
-
+                addHelper(
+                    volLabel,
+                    'Unavailable when "I want to volunteer" is selected.'
+                );
             } else {
                 volCheckbox.disabled = false;
             }
         }
 
-        updateCheckboxLogic();
+        update();
 
-        volCheckbox.addEventListener("change", updateCheckboxLogic);
-        notVolCheckbox.addEventListener("change", updateCheckboxLogic);
-
+        volCheckbox.addEventListener("change", update);
+        notVolCheckbox.addEventListener("change", update);
     }
+    
 
     /* =============================================================
       Watch DOM for VAN injecting the form & initialize logic once
     ============================================================= */
-    const observer = new MutationObserver((mutations, obs) => {
-        const fieldset = document.querySelector(FIELDSET_SELECTOR);
+    function waitforFieldset() {
+        const fieldset = getFieldset();
 
         if (fieldset) {
-            console.log("Fieldset found, initializing logic");
-            initCheckboxLogic(fieldset);
-            obs.disconnect(); // Stop watching after initialization
+            init(fieldset);
+            return;
         }
-    });
 
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
+        const observer = new MutationObserver(() => {
+            const fs = getFieldset();
+            
+            if (fs) {
+                console.log("Fieldset found, initializing logic");
+                init(fs);
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    waitforFieldset();
 
 })();

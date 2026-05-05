@@ -15,11 +15,12 @@ label[name="CustomFormFieldQuestion_4036957255566841"] {
 .checkbox-helper-text {
     display: block;
     font-size: 14px;
-    line-height: 1.4;
-    margin-top: 4px;
+    line-height: 1;
     margin-left: 24px;
     color: var(--secondary-text);
     font-style: italic;
+    clear: both;
+    width: 100%;
 }
 
 #NVSignupForm2574972-AdditionalInformation
