@@ -1,32 +1,35 @@
 /* =========================
-  Hide engagement question
-  label
+  Engagement question label
 ========================= */
-#NVSignupForm2574972-AdditionalInformation-CustomFormFieldQuestion_4036957255566841
-.checkbox-list-label {
-    display: none;
+label[name="CustomFormFieldQuestion_4036957255566841"] {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    margin: 1.0rem 0 0 !important;
+    line-height: 1.25 !important;
 }
-
 
 /* =========================
   Disabled checkbox
 ========================= */
-input[type="checkbox"]:disabled + label {
-    opacity: 0.45;
-    cursor: not-allowed;
-}
-
-.checkbox-disabled {
-    opacity: 0.45;
-    transition: opacity 0.2s ease;
-}
-
-.checkbox-disabled-message {
+.checkbox-helper-text {
     display: block;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
     margin-top: 4px;
     margin-left: 24px;
-    color: #666;
+    color: var(--secondary-text);
     font-style: italic;
+}
+
+#NVSignupForm2574972-AdditionalInformation
+label.at-check input[type="checkbox"]:disabled + .at-checkbox-title-container {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#NVSignupForm2574972-AdditionalInformation
+input[type="checkbox"]:disabled + span::before {
+    background-color: #eee !important;
+    border-color: #ccc !important;
 }
