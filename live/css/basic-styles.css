@@ -195,6 +195,15 @@ address {
   letter-spacing: 0.02em;
 }
 
+/* Interest Question Label */
+.at .at-form .InterestsHeaderHtml p {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
 
 /* Inputs */
 .at .at-form input[type="text"],
@@ -342,6 +351,37 @@ address {
 .at input[type="checkbox"]:checked + span::after {
   background-color: var(--primary);
   border-color: var(--primary);
+}
+
+
+/* =========================
+  Disabled checkbox
+========================= */
+.checkbox-helper-text {
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  margin-left: 24px;
+  color: var(--secondary-text);
+  font-style: italic;
+  clear: both;
+  width: 100%;
+}
+
+[id$="-AdditionalInformation"]
+label.at-check input[type="checkbox"]:disabled + .at-checkbox-title-container,
+[id$="-Interests"]
+label.at-check input[type="checkbox"]:disabled + .at-checkbox-title-container {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[id$="-AdditionalInformation"]
+input[type="checkbox"]:disabled + span::before,
+[id$="-Interests"]
+input[type="checkbox"]:disabled + span::before {
+  background-color: #eee !important;
+  border-color: #ccc !important;
 }
 
 
