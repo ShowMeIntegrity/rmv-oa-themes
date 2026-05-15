@@ -1,0 +1,36 @@
+/* =========================
+  Engagement question label
+========================= */
+label[name="CustomFormFieldQuestion_4036957255566841"] {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    margin: 1.0rem 0 0 !important;
+    line-height: 1.25 !important;
+}
+
+/* =========================
+  Disabled checkbox
+========================= */
+.checkbox-helper-text {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    margin-left: 24px;
+    color: var(--secondary-text);
+    font-style: italic;
+    clear: both;
+    width: 100%;
+}
+
+#NVSignupForm2574972-AdditionalInformation
+label.at-check input[type="checkbox"]:disabled + .at-checkbox-title-container {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#NVSignupForm2574972-AdditionalInformation
+input[type="checkbox"]:disabled + span::before {
+    background-color: #eee !important;
+    border-color: #ccc !important;
+}
