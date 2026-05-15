@@ -35,15 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             window.location.href = "http://respectmovoters.org/orientation";
         }, 3000);
-    } else if (interestValue.includes("I want to donate.")) {
-        messages.donor.style.display = "block";
-        setTimeout(() => {
-            window.location.href = "http://respectmovoters.org/donate";
-        }, 3000);
     } else if (interestValue.includes("I want to endorse as an individual.")) {
         messages.endorser.style.display = "block";
         setTimeout(() => {
             window.location.href = "http://respectmovoters.org/candidate";
+        }, 3000);
+    } else if (interestValue.includes("I want to donate.")) {
+        messages.donor.style.display = "block";
+        setTimeout(() => {
+            window.location.href = "http://respectmovoters.org/donate";
         }, 3000);
     } else {
         messages.other.style.display = "block";
