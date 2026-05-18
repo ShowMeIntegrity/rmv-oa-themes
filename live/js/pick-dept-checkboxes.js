@@ -18,12 +18,30 @@
         }
     ];
 
+    /* =================================================
+      Determine if form is embedded or standalone
+    ================================================= */
+    function getRoot() {
+
+        // Embedded form
+        const embedRoot = document.querySelector(".rmv-embed-form");
+
+        if (embedRoot) {
+            return embedRoot;
+        }
+
+        // Standalone VAN page
+        return document;
+    }
+
+    const ROOT = getRoot();
+
 
     /* =================================================
       Get query selector
     ================================================= */
     function getSelector(selector) {
-        return document.querySelector(selector);
+        return ROOT.querySelector(selector);
     }
 
 
@@ -39,14 +57,14 @@
             } = config;
 
             const label =  Array.from(
-                document.querySelectorAll("span.at-checkbox-title")
+                ROOT.querySelectorAll("span.at-checkbox-title")
             ).find(el => el.textContent.includes(matchText));
             console.log(label);
             if (!label) return;
 
             if (label.querySelector(".van-agreement-link")) return;
 
-            const link = document.createElement("a");
+            const link = ROOT.createElement("a");
             link.href = url;
             link.textContent = ` (View ${matchText})`;
             link.className = "van-agreement-link";
@@ -150,7 +168,7 @@
             }
         });
 
-        observer.observe(document.documentElement, {
+        observer.observe(ROOT.documentElement, {
             childList: true,
             subtree: true
         });
