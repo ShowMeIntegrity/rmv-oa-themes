@@ -74,7 +74,7 @@
                 
                 addHelper(
                     notVolLabel,
-                    'Unavailable when "I\'m not ready to volunteer right now" is selected.'
+                    'Unavailable when "I want to volunteer" is selected.'
                 );
             } else {
                 notVolCheckbox.disabled = false;
@@ -87,7 +87,7 @@
                 
                 addHelper(
                     volLabel,
-                    'Unavailable when "I want to volunteer" is selected.'
+                    'Unavailable when "I\'m not ready to volunteer right now" is selected.'
                 );
             } else {
                 volCheckbox.disabled = false;
