@@ -43,14 +43,14 @@ body {
   font-family: var(--font);
   font-size: 16px;
   color: var(--text);
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   margin: 0;
   display: flex;
   justify-content: center;
   line-height: 1.5;
 }
 
-p {
+.at p {
   font-size: 16px;
   line-height: 1.6;
   margin: 0 0 1rem;
@@ -101,7 +101,7 @@ p {
   padding: 0px 24px 12px;
 }
 
-h1 {
+.at h1 {
   font-size: 26px;
   font-weight: 700;
   color: var(--text);
@@ -110,7 +110,7 @@ h1 {
   line-height: 1.25;
 }
 
-h2 {
+.at h2 {
   font-size: 20px;
   font-weight: 700;
   color: var(--text);
@@ -118,23 +118,23 @@ h2 {
   line-height: 1.25;
 }
 
-h3 {
+.at h3 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 1.35;
   margin: 1.5rem 0 0.5rem;
 }
 
-h4 {
+.at h4 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 1.4;
   margin: 1.5rem 0 0.5rem;
 }
 
-h5 {
+.at h5 {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.4;
   margin: 1.5rem 0 0.5rem;
   text-transform: uppercase;
@@ -143,14 +143,14 @@ h5 {
   letter-spacing: -0.3px;
 }
 
-h6 {
+.at h6 {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.4;
   margin: 1.5rem 0 0.5rem;
 }
 
-pre {
+.at pre {
   font-family: 'Courier New', monospace;
   font-size: 14px;
   line-height: 1.5;
@@ -160,7 +160,7 @@ pre {
   overflow-x: auto;
 }
 
-address {
+.at address {
   font-style: italic;
   line-height: 1.5;
   color: var(--secondary-text);
