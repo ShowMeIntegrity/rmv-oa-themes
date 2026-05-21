@@ -28,7 +28,7 @@
 
   /* Layout */
   --radius: 10px;
-  --container: 800px;
+  --container: 910px;
 
   /* Interaction */
   --focus: rgba(4, 4, 73, 0.25);
@@ -75,7 +75,7 @@ body {
 .oa-card {
   background: var(--card);
   border-radius: calc(var(--radius) * 1.6);
-  padding: 56px;
+  padding: 48px;
   box-shadow: 0 12px 32px var(--card-shadow);
 }
 
