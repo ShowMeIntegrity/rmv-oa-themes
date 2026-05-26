@@ -28,7 +28,7 @@
 
   /* Layout */
   --radius: 10px;
-  --container: 800px;
+  --container: 910px;
 
   /* Interaction */
   --focus: rgba(4, 4, 73, 0.25);
@@ -50,12 +50,6 @@ body {
   line-height: 1.5;
 }
 
-.at p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0 0 1rem;
-}
-
 
 /* =========================
   Layout (form wrapper)
@@ -75,7 +69,7 @@ body {
 .oa-card {
   background: var(--card);
   border-radius: calc(var(--radius) * 1.6);
-  padding: 56px;
+  padding: 48px;
   box-shadow: 0 12px 32px var(--card-shadow);
 }
 
@@ -86,6 +80,11 @@ body {
   width: auto;
   max-width: 100%;
   height: auto;
+}
+
+.at {
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -150,6 +149,12 @@ body {
   margin: 1.5rem 0 0.5rem;
 }
 
+.at p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
 .at pre {
   font-family: 'Courier New', monospace;
   font-size: 14px;
@@ -192,7 +197,29 @@ body {
   margin-bottom: 6px;
   display: block;
   color: var(--text);
-  letter-spacing: 0.02em;
+}
+
+/* Contact Info Title Label */
+.at fieldset legend {
+    font-family: var(--font) !important;
+    padding-bottom: 0;
+    padding-top: 23px;
+    border: 0;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    margin: 0.5rem 0 0 6px !important;
+    line-height: 1.25 !important;
+}
+
+/* Checkbox List Label */
+.at .checkbox-list-label {
+  padding-bottom: 10px;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin: 0.5rem 0 0 10px !important;
+  line-height: 1.25 !important;
 }
 
 /* Interest Question Label */

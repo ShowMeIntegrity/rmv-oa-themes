@@ -1,36 +1,84 @@
 /* =========================
-  Engagement question label
+  Layout
 ========================= */
-label[name="CustomFormFieldQuestion_4036957255566841"] {
-    font-size: 20px !important;
-    font-weight: 700 !important;
-    color: var(--text) !important;
-    margin: 1.0rem 0 0 !important;
-    line-height: 1.25 !important;
+.at .at-form {
+    margin: 0;
 }
+
+.oa-card {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+}
+
+.at-inner,
+.fastAction,
+.poweredby {
+    background: transparent;
+}
+
+.at {
+    display: flex;
+    justify-content: center;
+}
+
+.HeaderHtml {
+    text-align: center;
+}
+
 
 /* =========================
-  Disabled checkbox
+  Typography
 ========================= */
-.checkbox-helper-text {
-    display: block;
-    font-size: 14px;
-    line-height: 1;
-    margin-left: 24px;
+.at .SmsLegalDisclaimer p,
+.fastAction .fa-lead,
+.at label small,
+.poweredby,
+.poweredby a {
     color: var(--secondary-text);
-    font-style: italic;
-    clear: both;
-    width: 100%;
 }
 
-#NVSignupForm2574972-AdditionalInformation
-label.at-check input[type="checkbox"]:disabled + .at-checkbox-title-container {
-    opacity: 0.5;
-    cursor: not-allowed;
+.at a {
+    color: #087997;
 }
 
-#NVSignupForm2574972-AdditionalInformation
-input[type="checkbox"]:disabled + span::before {
-    background-color: #eee !important;
-    border-color: #ccc !important;
+.fastAction .profile-link .profile-link-fa-image {
+    filter: brightness(0.6);
+}
+
+.HeaderHtml p {
+    font-size: 18px;
+}
+
+
+/* =========================
+  Hidden text
+========================= */
+.at .at-form .embed-hidden,
+.at .at-form .at-title {
+    display: none;
+}
+
+
+/* =========================
+  Submit button
+========================= */
+.at .at-form .btn-at-primary,
+.at .at-form button.btn-at-primary {
+    padding: 20px 100px;
+    border-radius: 30px;
+}
+
+.at-form-submit .at-submit {
+    margin: auto;
+    display: flex;
+    float: none;
+    justify-content: center;
+}
+
+
+/* =========================
+  Checkboxes
+========================= */
+.at input[type=checkbox]+span:before {
+    background: rgba(255, 255, 255, 1);
 }
