@@ -1,8 +1,8 @@
 (function () {
     const MAX_CHECKED = 2;
     const FIELDSET_SELECTOR = "#NVVolunteerForm2588973-Interests";
-    const SUPPORT_SELECTOR = "#NVVolunteerForm2588973-AdditionalInformation-CustomFormFieldQuestion_4140351343741448-select";
-    const MORE_INFO_VALUE = "1347479379289759";
+    const SUPPORT_SELECTOR = "#NVVolunteerForm2588973-AdditionalInformation-CustomFormFieldQuestion_4140351343741448_MappedCustomFormFieldQuestion_180-select";
+    const MORE_INFO_VALUE = "1";
     const AGREEMENT_LINK_CONFIG = [
         {
             selector: '#NVVolunteerForm2588464-AdditionalInformation-CustomFormFieldQuestion_5030964258686487-label',
