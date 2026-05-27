@@ -6,12 +6,12 @@ const deptMap = {
   field:      "2864523",
   funds:      "2864524",
   vibes:      "2864525",
+  logistics:  "2864630",  
   notary:     "2864623",
   onboarding: "2864528",
   outreach:   "2864529",
   policy:     "2864532",
   tech:       "2864538",
-  vc:         "2864630",
   other:      "2864539"
 };
 
