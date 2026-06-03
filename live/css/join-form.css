@@ -5,9 +5,20 @@
     margin: 0;
 }
 
+.oa-page {
+    min-height: unset !important;
+    height: auto !important;
+}
+
+.oa-container {
+    min-height: unset !important;
+    height: auto !important;
+}
+
 .oa-card {
     background: rgba(255, 255, 255, 0.7);
     padding: 20px;
+    height: auto !important;
 }
 
 .at-inner,
@@ -41,6 +52,15 @@
     color: #087997;
 }
 
+.at-title {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    margin-bottom: 0px !important;
+    letter-spacing: -0.3px !important;
+    padding: 0px 24px 0px !important;
+}
+
 .fastAction .profile-link .profile-link-fa-image {
     filter: brightness(0.6);
 }
@@ -54,8 +74,9 @@
   Hidden text
 ========================= */
 .at .at-form .embed-hidden,
-.at .at-form .at-title {
-    display: none;
+.at .at-form .at-title,
+.at .at-form .fastAction {
+    display: none !important;
 }
 
 
@@ -81,4 +102,57 @@
 ========================= */
 .at input[type=checkbox]+span:before {
     background: rgba(255, 255, 255, 1);
+}
+
+
+/* =========================
+  Accordion
+========================= */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    position: relative;
+}
+
+.accordion-content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1)
+    );
+}
+
+.accordion-content.expanded {
+    max-height: 2000px;
+}
+
+.accordion-content:not(.expanded) {
+    border-bottom: 1px dashed rgba(0,0,0,0.15);
+}
+
+.accordion-content.expanded::after {
+    display: none;
+}
+
+.form-continue-cue {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-text);
+    cursor: pointer;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.form-continue-cue:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
