@@ -45,7 +45,6 @@ body {
   color: var(--text);
   /* background-color: var(--bg); */
   margin: 0;
-  display: flex;
   justify-content: center;
   line-height: 1.5;
 }
@@ -80,6 +79,7 @@ body {
   width: auto;
   max-width: 100%;
   height: auto;
+  max-height: 100px;
 }
 
 .at {
