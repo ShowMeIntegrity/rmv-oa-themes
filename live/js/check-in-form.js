@@ -2,17 +2,16 @@
   Dept name to VANid mapping
 ========================= */
 const deptMap = {
-  comms:      "2864522",
-  field:      "2864523",
-  funds:      "2864524",
-  vibes:      "2864525",
-  logistics:  "2864630",  
-  notary:     "2864623",
-  onboarding: "2864528",
-  outreach:   "2864529",
-  policy:     "2864532",
-  tech:       "2864538",
-  other:      "2864539"
+  comms:      "4666193462379692",
+  field:      "1000761908753303",
+  funds:      "3756246609760897",
+  logistics:  "5658104019172261",  
+  notary:     "5802458084645267",
+  outreach:   "2206187084194357",
+  policy:     "5586985590815803",
+  tech:       "5716779966810194",
+  volex:      "4054865110312500",
+  other:      "5751770051237373"
 };
 
 
@@ -36,7 +35,7 @@ function setDepartment() {
   if (!value) return;
 
   const select = document.querySelector(
-    'select[name="CustomFormFieldQuestion_1115962816574494_MappedSurveyQuestion_713048"]'
+    'select[name="CustomFormFieldQuestion_5579699772702712"]'
   );
 
   if (select) {
